@@ -1,0 +1,18 @@
+import pygame
+from settings import *
+import cube
+
+pygame.init()
+screan = pygame.display.set_mode((HRES, VRES))
+display = pygame.Surface((HRES//2, VRES//2))
+clock = pygame.time.Clock()
+cube1 = cube.Cube(ORIGIN)
+
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    clock.tick(FPS)
+    pygame.display.update()
